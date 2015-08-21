@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(this, "ｷﾀ━(ﾟ∀ﾟ)━!", Toast.LENGTH_LONG).show();
+
+        TextView myTextView = (TextView)findViewById(R.id.myTextView);
+        myTextView.setText("やったー");
+
+        Button myButton1 = (Button)findViewById(R.id.button);
+        myButton1.setOnClickListener(new Button1ClickListener());
     }
 
     @Override
@@ -33,5 +44,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class Button1ClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(MainActivity.this, "押された！",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "ｷﾀ━(ﾟ∀ﾟ)━!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "単位欲しくないですか？", Toast.LENGTH_SHORT).show();
 
         TextView myTextView = (TextView)findViewById(R.id.myTextView);
-        myTextView.setText("やったー");
+        myTextView.setText("こんなんで貰えません!");
 
         Button myButton1 = (Button)findViewById(R.id.button);
         myButton1.setOnClickListener(new Button1ClickListener());
